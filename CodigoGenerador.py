@@ -94,7 +94,7 @@ def draw_step(current, idx, sym=None):
     plt.pause(1.2)
 
 if __name__ == '__main__':
-    s = sys.argv[1] if len(sys.argv) > 1 else input("Introduce cadena de eventos (ej: abdba, cdbc): ").strip()
+    s = sys.argv[1] if len(sys.argv) > 1 else input("Introduce... cadena de eventos (ej: abdba, cdbc): ").strip()
     try:
         steps, ok = run(s)
         print("✔ CADENA ACEPTADA" if ok else "✘ CADENA RECHAZADA (No terminó en estado final)", f"-> Estado final: {steps[-1]}")
