@@ -1,7 +1,7 @@
 import sys, matplotlib.pyplot as plt, networkx as nx
 from matplotlib.patches import FancyArrowPatch
 
-# === Definición del DFA: Máquina Expendedora ===
+# === Definición del DFA: Máquina Expendedora ====
 states = {"q0", "q1", "q2", "q3", "q4", "q5", "q6", "q7"}
 alphabet = {"a", "b", "c"}
 delta = {
