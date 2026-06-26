@@ -2,7 +2,7 @@ import sys, matplotlib.pyplot as plt, networkx as nx
 from matplotlib.patches import FancyArrowPatch
 
 states = {"q0", "q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8"}
-alphabet = {"a", "b", "c", "d"}
+alphabet = {"a", "b", "c"}
 
 delta = {
     ("q0", "a"): "q1",  
@@ -10,14 +10,13 @@ delta = {
     ("q0", "c"): "q3",  
     ("q1", "a"): "q1",  
     ("q1", "b"): "q2",  
-    ("q1", "d"): "q4",  
+    ("q1", "c"): "q4",  
     ("q2", "a"): "q2",  
     ("q2", "b"): "q1",  
     ("q2", "c"): "q3",  
-    ("q2", "d"): "q4",  
     ("q3", "a"): "q3",  
     ("q3", "b"): "q2",  
-    ("q3", "d"): "q4",  
+    ("q3", "c"): "q4",  
     ("q4", "a"): "q7",  
     ("q4", "b"): "q5",  
     ("q5", "b"): "q6",  
@@ -94,7 +93,7 @@ def draw_step(current, idx, sym=None):
     plt.pause(1.2)
 
 if __name__ == '__main__':
-    s = sys.argv[1] if len(sys.argv) > 1 else input("Introduce... cadena de eventos (ej: abdba, cdbc): ").strip()
+    s = sys.argv[1] if len(sys.argv) > 1 else input("Introduce cadena de eventos (ej: abcba, ccbc): ").strip()
     try:
         steps, ok = run(s)
         print("✔ CADENA ACEPTADA" if ok else "✘ CADENA RECHAZADA (No terminó en estado final)", f"-> Estado final: {steps[-1]}")
