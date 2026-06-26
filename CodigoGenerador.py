@@ -12,9 +12,11 @@ delta = {
     ("q1", "b"): "q2",  
     ("q1", "d"): "q4",  
     ("q2", "a"): "q2",  
+    ("q2", "b"): "q1",  
     ("q2", "c"): "q3",  
     ("q2", "d"): "q4",  
     ("q3", "a"): "q3",  
+    ("q3", "b"): "q2",  
     ("q3", "d"): "q4",  
     ("q4", "a"): "q7",  
     ("q4", "b"): "q5",  
@@ -79,11 +81,11 @@ def draw_step(current, idx, sym=None):
         
         i = seen.get((u, v), 0)
         seen[(u, v)] = i + 1
-        rad = 0.20 if i % 2 == 0 else -0.20
+        rad = 0.25 if i % 2 == 0 else -0.25
         nx.draw_networkx_edges(G, pos, edgelist=[(u, v)], connectionstyle=f"arc3,rad={rad}", 
                                arrows=True, arrowstyle='-|>', arrowsize=15)
         
-        lx, ly = _mid(pos[u], pos[v], 0.08 if i % 2 == 0 else -0.08)
+        lx, ly = _mid(pos[u], pos[v], 0.12 if i % 2 == 0 else -0.12)
         plt.text(lx, ly, d['label'], fontsize=11, color="blue", ha='center', va='center', 
                  bbox=dict(facecolor='white', alpha=0.7, edgecolor='none'))
                  
