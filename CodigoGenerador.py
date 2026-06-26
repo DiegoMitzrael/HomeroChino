@@ -50,7 +50,7 @@ def _mid(p1, p2, o=0.10):
     dx, dy = x2 - x1, y2 - y1
     nx_, ny_ = -dy, dx
     L = (nx_**2 + ny_**2)**0.5 or 1
-    return mx + o * nx_ / L, my + o * ny_ / L
+    return mx + o * nx_/L, my + o * ny_/L
 
 def draw_step(current, idx, sym=None):
     plt.clf()
